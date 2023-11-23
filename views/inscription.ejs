@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link rel="stylesheet" href="/stylesheets/inscription.css" />
+  </head>
+  <body>
+   
+    <form class="card" method="post" action="/inscription">
+
+      <div class="croix">
+        <a href="/indexs"
+          ><img
+            src="/images/ferme1.png"
+            alt=""
+            style="filter: invert(); width: 40px; height: 40px"
+        /></a>
+      </div>
+      <div class="cards">
+        <h1>Inscription</h1>
+       
+        <p style="margin-bottom: 30px" class="pp">
+          <img
+            src="/images/372902_user_name_round_username_linecon_icon.png"
+            alt=""
+          />
+          <input type="text" name="name" id="name" placeholder="Name" required />
+        </p>
+        <p style="margin-bottom: 30px" class="pp">
+          <img src="/images/3669350_email_ic_icon.png" alt="" />
+          <input type="email" name="email" id="email" placeholder="E-mail" required />
+        </p>
+        <p style="margin-bottom: 10px" class="pp">
+          <img src="/images/2639882_password_icon.png" alt="" />
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Password"
+            required
+          />
+        </p>
+        
+          <input
+            type="hidden"
+            name="statut"
+            id="statut"
+            value="C"
+            
+          />
+       
+        <span><input type="checkbox" /></span>
+        <span>J'ai lu,jaccepte <a href="">les termes & conditions</a></span>
+        <p style="margin-top: 30px">
+          <input class="btn" type="submit" value="create account"
+          />
+        </p>
+      </div>
+    </form>
+   
+  </body>
+</html>
