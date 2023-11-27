@@ -3,8 +3,8 @@ const controllerUser = require('../controller/controllerUser');
 var router = express.Router();
 
 /* GET users listing. */
-router.get('/inscription', controllerUser.inscription);
-router.post('/inscription', controllerUser.inscriptionPost);
+router.get('/', controllerUser.inscription);
+router.post('/', controllerUser.inscriptionPost);
 router.get('/connexion', controllerUser.connexion);
 router.post('/connexion', controllerUser.connexionPost);
 router.get('/deconnexion', controllerUser.deconnexion);
