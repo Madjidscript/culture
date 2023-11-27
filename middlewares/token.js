@@ -16,6 +16,7 @@ const Midtoken = class {
     static verifyToken = async (token)=>{
         try {
             const decodToken = await jwt.verify(token,"maclée")
+            return decodToken
         } catch (error) {
             console.log("mon erreur lors de la verifiction du token", error);
         }
@@ -29,7 +30,7 @@ const Midtoken = class {
                 res.redirect("/connexion")
             }
             else{
-                if(req.url==="indexs1"){
+                if(req.url==="/connexion" || req.url==="/inscription"){
                     res.redirect("/index2")
                      }
                    else if (req.url==="/deconnection") {

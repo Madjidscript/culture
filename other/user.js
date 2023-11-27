@@ -21,7 +21,7 @@ static utilisarteuParID = async(id)=>{
 
 static utilisateurParEmail = async(email)=>{
     try {
-        const recupParEmail = await User.findOne({emails:email})
+        const recupParEmail = await User.findOne({email:email})
         return recupParEmail
     } catch (error) {
         console.log("mon erreur",error);

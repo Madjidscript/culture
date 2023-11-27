@@ -18,21 +18,31 @@
       </div>
       <div class="cards">
         <h1 style="color: #65a25b">connexion</h1>
-
+         
         <p style="margin-bottom: 30px" class="pp">
           <img src="/images/3669350_email_ic_icon.png" alt="" />
           <input type="email" name="email" id="email" placeholder="  E-mail" required />
+
+          <% if( typeof message1 !== "undefined" && message1 ) { %>
+            <p><%= message1 %></p>
+            <% } %>
         </p>
+        
+        
         <p style="margin-bottom: 10px" class="pp">
           <img src="/images/2639882_password_icon.png" alt="" />
           <input
             type="password"
             name="password"
             id="password"
-            placeholder="  Password"
+            placeholder="Password"
             required
           />
+          <% if(typeof message2 !== "undefined" && message2 ) { %>
+            <p><%= message2 %></p>
+            <% } %>
         </p>
+        
 
         <p style="margin-top: 30px">
           <input class="btn" type="submit" value="connexion" required
