@@ -8,19 +8,19 @@
   </head>
   <body>
     <form  method="post" action="/connexion" class="card">
-      <div class="croix">
+      <!-- <div class="croix">
         <a href="/indexs"
           ><img
             src="/images/ferme1.png"
             alt=""
             style="filter: invert(); width: 40px; height: 40px"
         /></a>
-      </div>
+      </div> -->
       <div class="cards">
-        <h1 style="color: #65a25b">connexion</h1>
+        <h1 style="color: white">connexion</h1>
          
         <p style="margin-bottom: 30px" class="pp">
-          <img src="/images/3669350_email_ic_icon.png" alt="" />
+         
           <input type="email" name="email" id="email" placeholder="  E-mail" required />
 
           <% if( typeof message1 !== "undefined" && message1 ) { %>
@@ -30,7 +30,7 @@
         
         
         <p style="margin-bottom: 10px" class="pp">
-          <img src="/images/2639882_password_icon.png" alt="" />
+         
           <input
             type="password"
             name="password"
@@ -49,8 +49,8 @@
           />
         </p>
         <span
-          >vous n'avez pas de compte creer en un
-          <a href="./inscription">ici</a></span
+          style="color: #191970;">vous n'avez pas de compte creer en un
+          <a href="./">ici</a></span
         >
       </div>
     </form>
