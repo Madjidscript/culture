@@ -31,7 +31,9 @@ const Midtoken = class {
           }else{
             res.redirect("/connexion")
           }
-        }
+        }else{
+            res.redirect("/connexion")
+          }
     }
 }
 module.exports= Midtoken
