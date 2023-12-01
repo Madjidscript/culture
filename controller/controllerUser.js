@@ -8,7 +8,12 @@ const Midtoken = require("../middlewares/token");
 
 const controllerUser = class{
    static inscription = (req=request,res=response)=>{
-    res.render("inscription")
+      const token = req.cookies.culture
+      if (token) {
+         res.redirect("/index2")
+      } else {
+         return res.render("inscription")
+      }
    }
    static inscriptionPost = async(req=request,res=response)=>{
    
@@ -39,7 +44,14 @@ const controllerUser = class{
   
       
     }
-    static connexion = (req=request,res=response)=>{return res.render("connexion",{"title":"connexion"})}
+    static connexion = (req=request,res=response)=>{
+      const token = req.cookies.culture
+      if (token) {
+         res.redirect("/index2")
+      } else {
+         return res.render("connexion",{"title":"connexion"})}
+      }
+      
     static connexionPost = async(req=request,res=response)=>{
      const email = req.body.email
      const password = req.body.password
@@ -71,6 +83,7 @@ const controllerUser = class{
     }
     static index2 = async (req=request,res=response)=>{
       const token = await req.cookies.culture
+      console.log('mon cookie1er' ,token);
       const verif = await Midtoken.verifyToken(token)
       console.log("ma verification",verif);
       const id= verif.id

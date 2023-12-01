@@ -23,25 +23,14 @@ const Midtoken = class {
     }
 
     static authToken = async (req,res,next)=>{
-        const token = req.cookie.culture
+        const token =  req.cookies.culture
         if (token) {
-            jwt.verify(token,"maclée",async(error,succes))
-            if (error) {
-                res.redirect("/connexion")
-            }
-            else{
-                if(req.url==="/connexion" || req.url==="/inscription"){
-                    res.redirect("/index2")
-                     }
-                   else if (req.url==="/deconnection") {
-                     res.redirect("/connexion")
-                    }
-                 else{
-                     next()
-                 }
-            }
-        }else{
-            res.redirect('/connexion')
+        const bonToken =  await  jwt.verify(token,"maclée")
+          if (bonToken) {
+            next()
+          }else{
+            res.redirect("/connexion")
+          }
         }
     }
 }
